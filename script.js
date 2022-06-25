@@ -41,3 +41,5 @@ const showRandomMovie = () => {
 
 getGenres().then(populateGenreDropdown);
 playBtn.onclick = showRandomMovie;
+
+console.log('testing');
