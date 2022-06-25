@@ -9,6 +9,23 @@ const getGenres = async () => {
   const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
 
   try {
+    //await fetch(urlToFetch); 
+    // incorrect. Solidfy understanding of .then/this./Get/Post/Fetch/Await uses and anatomy. 
+    const response = await fetch(urlToFetch);
+    //.ok is a built in property of the fetch response that lets us know if our call was successful.
+    if (response.ok){ //this is enough for a conditional?? I had it set to response.ok === true, but I think .ok is inherently a truthy value/checker?
+      const jsonResponse = await response.json();
+      // this al
+    console.log(jsonResponse)
+    /*
+    capture data that we need to populate our dropdown menu.
+    get requested data
+    convert the response object to a JSON object
+    Await the resolution
+    save it to a variable called jsonResponse
+    */
+
+    }
 
   } catch (err) {
     console.log(err)
